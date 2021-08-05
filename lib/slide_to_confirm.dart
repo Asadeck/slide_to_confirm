@@ -208,7 +208,8 @@ class ConfirmationSliderState extends State<ConfirmationSlider> {
                       size: 35,
                     )
                   : Container(
-                      margin: EdgeInsets.all(10),
+                      height: widget.height - 10,
+                      width: widget.height - 10,
                       child: widget.icon,
                     ),
             ),
