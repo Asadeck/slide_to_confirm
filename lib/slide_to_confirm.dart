@@ -217,25 +217,16 @@ class ConfirmationSliderState extends State<ConfirmationSlider> {
                 if (widget.onTapUp != null) widget.onTapUp!();
                 sliderReleased(details);
               },
-              child: Container(
-                height: widget.height - 10,
-                width: widget.height - 10,
-                decoration: BoxDecoration(
-                  borderRadius: widget.foregroundShape ??
-                      BorderRadius.all(Radius.circular(widget.height / 2)),
-                  color: widget.foregroundColor,
-                ),
-                child: widget.icon is IconData
-                    ? Icon(
-                        widget.icon,
-                        color: widget.iconColor,
-                        size: 35,
-                      )
-                    : Container(
-                        margin: EdgeInsets.all(10),
-                        child: widget.icon,
-                      ),
-              ),
+              child: widget.icon is IconData
+                  ? Icon(
+                      widget.icon,
+                      color: widget.iconColor,
+                      size: 35,
+                    )
+                  : Container(
+                      margin: EdgeInsets.all(10),
+                      child: widget.icon,
+                    ),
             ),
           ),
         ],
