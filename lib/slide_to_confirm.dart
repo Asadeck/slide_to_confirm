@@ -180,6 +180,22 @@ class ConfirmationSliderState extends State<ConfirmationSlider> {
       child: Stack(
         children: <Widget>[
           Center(child: widget.text),
+          Positioned(
+            left: widget.height / 2,
+            child: AnimatedContainer(
+              height: widget.height - 10,
+              width: getPosition(),
+              duration: Duration(milliseconds: _duration),
+              curve: Curves.ease,
+              decoration: BoxDecoration(
+                borderRadius: widget.backgroundShape ??
+                    BorderRadius.all(Radius.circular(widget.height)),
+                color: widget.backgroundColorEnd != null
+                    ? this.calculateBackground()
+                    : widget.backgroundColor,
+              ),
+            ),
+          ),
           AnimatedPositioned(
             duration: Duration(milliseconds: _duration),
             curve: Curves.bounceOut,
