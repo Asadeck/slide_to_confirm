@@ -27,7 +27,7 @@ class ConfirmationSlider extends StatefulWidget {
   final BoxShadow? shadow;
 
   /// The text showed below the foreground. Used to specify the functionality to the user. Defaults to "Slide to confirm".
-  final String text;
+  final Widget text;
 
   /// The style of the text. Defaults to TextStyle(color: Colors.black26, fontWeight: FontWeight.bold,).
   final TextStyle? textStyle;
@@ -60,7 +60,7 @@ class ConfirmationSlider extends StatefulWidget {
     this.iconColor = Colors.white,
     this.shadow,
     this.icon = Icons.chevron_right,
-    this.text = "Slide to confirm",
+    required this.text,
     this.textStyle,
     required this.onConfirmation,
     this.onTapDown,
@@ -179,12 +179,7 @@ class ConfirmationSliderState extends State<ConfirmationSlider> {
       ),
       child: Stack(
         children: <Widget>[
-          Center(
-            child: Text(
-              widget.text,
-              style: style,
-            ),
-          ),
+          Center(child: widget.text),
           AnimatedPositioned(
             duration: Duration(milliseconds: _duration),
             curve: Curves.bounceOut,
