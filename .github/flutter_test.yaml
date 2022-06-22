@@ -1,0 +1,17 @@
+name: 'Flutter Test'
+on:
+  pull_request:
+    types: [synchronize]
+      branches:
+        - prod
+        - staging
+        - dev
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2     # checkout the repo
+      - run: flutter pub get
+      - uses: dorny/test-reporter@v1.5.0        # checkout the repo
+      - run: flutter test
+      - uses: actions/upload-artifact@v2  # upload test results
