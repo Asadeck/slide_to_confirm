@@ -147,7 +147,7 @@ class ConfirmationSliderState extends State<ConfirmationSlider> {
         color: Colors.black38,
         offset: Offset(0, 2),
         blurRadius: 2,
-        spreadRadius: 0,
+        spreadRadius: 0.0,
       );
     } else {
       shadow = widget.shadow!;
