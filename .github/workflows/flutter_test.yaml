@@ -10,6 +10,7 @@ jobs:
       - uses: dorny/test-reporter@v1.5.0        # checkout the repo
         with:
           flutter-version: "3.0.2"
+          name: 'flutter name'
       - run: flutter pub get
       - run: flutter test
       - uses: actions/upload-artifact@v2  # upload test results
