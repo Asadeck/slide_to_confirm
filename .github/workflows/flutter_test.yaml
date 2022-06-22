@@ -7,8 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2     # checkout the repo
       - uses: dorny/test-reporter@v1.5.0        # checkout the repo
-        if: success() || failure()    # run this step even if previous step failed
-      - with:
+        with:
           flutter-version: "3.0.2"
       - run: flutter pub get
       - run: flutter test
