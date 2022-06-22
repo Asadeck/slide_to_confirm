@@ -52,7 +52,7 @@ class ConfirmationSlider extends StatefulWidget {
 
   const ConfirmationSlider({
     Key? key,
-    this.height = 70,
+    this.height = 80,
     this.width = 300,
     this.backgroundColor = Colors.white,
     this.backgroundColorEnd,
@@ -151,16 +151,6 @@ class ConfirmationSliderState extends State<ConfirmationSlider> {
       );
     } else {
       shadow = widget.shadow!;
-    }
-
-    TextStyle style;
-    if (widget.textStyle == null) {
-      style = TextStyle(
-        color: Colors.black26,
-        fontWeight: FontWeight.bold,
-      );
-    } else {
-      style = widget.textStyle!;
     }
 
     return AnimatedContainer(
