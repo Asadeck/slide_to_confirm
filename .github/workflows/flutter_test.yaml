@@ -2,7 +2,7 @@ name: 'Flutter Test'
 on:
   pull_request:
 jobs:
-  build-test:
+  build:
     name: Test
     runs-on: ubuntu-latest
     steps:
